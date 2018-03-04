@@ -15,6 +15,8 @@
  */
 package com.example.android.quakereport;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -47,7 +49,7 @@ public class EarthquakeActivity extends AppCompatActivity {
 //        earthquakes.add(new EarthquakeItem("4.9","Rio de Janeiro","Aug 19,2012"));
 //        earthquakes.add(new EarthquakeItem("1.6","Paris","Oct 30,2011"));
 
-        ArrayList<EarthquakeItem> earthquakes = new QueryUtils().queryEarthquakes();
+        final ArrayList<EarthquakeItem> earthquakes = new QueryUtils().queryEarthquakes();
 
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
@@ -58,5 +60,21 @@ public class EarthquakeActivity extends AppCompatActivity {
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
         earthquakeListView.setAdapter(adapter);
+
+        //listener to earthquake details page
+        earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String url = earthquakes.get(position).getUrl();
+
+                openBrowser(url);
+            }
+        });
+    }
+
+    private void openBrowser(String url) {
+        Uri webUrl = Uri.parse(url);
+        Intent i = new Intent(Intent.ACTION_VIEW,webUrl);
+        startActivity(i);
     }
 }

@@ -38,7 +38,8 @@ public class QueryUtils {
                 Double mag = properties.getDouble("mag");
                 String place = properties.getString("place");
                 Long timeInMilliSec = properties.getLong("time");
-                earthquakeItems.add(new EarthquakeItem(mag,place,timeInMilliSec));
+                String url = properties.getString("url");
+                earthquakeItems.add(new EarthquakeItem(mag,place,timeInMilliSec,url));
             }
         } catch (JSONException e) {
             e.printStackTrace();

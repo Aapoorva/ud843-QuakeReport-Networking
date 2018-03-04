@@ -9,15 +9,17 @@ public class EarthquakeItem{
     private double mag;
     private String place;
     private long timeInMilliSec;
+    private String url;
 
     public EarthquakeItem(){
 
     }
 
-    public EarthquakeItem(double mag, String place, Long timeInMilliSec) {
+    public EarthquakeItem(double mag, String place, Long timeInMilliSec, String url) {
         this.mag = mag;
         this.place = place;
         this.timeInMilliSec = timeInMilliSec;
+        this.url = url;
     }
 
     public double getMag() {
@@ -42,5 +44,13 @@ public class EarthquakeItem{
 
     public void setTimeInMilliSec(long timeInMilliSec) {
         this.timeInMilliSec = timeInMilliSec;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

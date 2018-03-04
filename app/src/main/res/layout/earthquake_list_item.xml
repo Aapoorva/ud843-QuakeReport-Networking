@@ -1,28 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="3"
+    android:weightSum="2"
     android:id="@+id/ll_list_item"
     android:padding="16dp">
 
     <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/tv_earthquake_mag"/>
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/colour_circle"
+        android:id="@+id/tv_earthquake_mag"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:text="7.2"/>
 
-    <TextView
+    <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="36dp"
+        android:orientation="vertical"
         android:layout_weight="1"
-        android:id="@+id/tv_earthquake_place"/>
+        android:layout_marginLeft="16dp">
 
-    <TextView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_earthquake_place_dis"
+            android:text="88km N of"
+            android:textSize="12sp"
+            android:textColor="@color/textColorEarthquakeDetails"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_earthquake_place_name"
+            android:text="Yelizovo,Russia"
+            android:textSize="16sp"
+            android:textColor="@color/textColorEarthquakeLocation"/>
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/tv_earthquake_date"/>
+        android:layout_height="36dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_earthquake_date"
+            android:text="Jan 30, 2016"
+            android:textSize="12sp"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:gravity="end"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_earthquake_time"
+            android:text="8:55AM"
+            android:textSize="12sp"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:gravity="end"/>
+    </LinearLayout>
 
 </LinearLayout>

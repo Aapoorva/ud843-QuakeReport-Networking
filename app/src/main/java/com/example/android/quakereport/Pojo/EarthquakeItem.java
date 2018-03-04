@@ -6,23 +6,25 @@ package com.example.android.quakereport.Pojo;
 
 public class EarthquakeItem{
 
-    private String mag,place,date;
+    private double mag;
+    private String place;
+    private long timeInMilliSec;
 
     public EarthquakeItem(){
 
     }
 
-    public EarthquakeItem(String mag, String place, String date) {
+    public EarthquakeItem(double mag, String place, Long timeInMilliSec) {
         this.mag = mag;
         this.place = place;
-        this.date = date;
+        this.timeInMilliSec = timeInMilliSec;
     }
 
-    public String getMag() {
+    public double getMag() {
         return mag;
     }
 
-    public void setMag(String mag) {
+    public void setMag(double mag) {
         this.mag = mag;
     }
 
@@ -34,11 +36,11 @@ public class EarthquakeItem{
         this.place = place;
     }
 
-    public String getDate() {
-        return date;
+    public long getTimeInMilliSec() {
+        return timeInMilliSec;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setTimeInMilliSec(long timeInMilliSec) {
+        this.timeInMilliSec = timeInMilliSec;
     }
 }

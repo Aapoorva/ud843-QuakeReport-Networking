@@ -18,6 +18,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -26,8 +27,12 @@ import java.util.Locale;
 
 public class EarthquakeItemAdapter extends ArrayAdapter<EarthquakeItem> {
 
-    public EarthquakeItemAdapter(@NonNull Context context, ArrayList<EarthquakeItem> earthquakeItems) {
+    public EarthquakeItemAdapter(@NonNull Context context, List<EarthquakeItem> earthquakeItems) {
         super(context, 0,earthquakeItems);
+    }
+
+    public EarthquakeItemAdapter(@NonNull Context context) {
+        super(context, 0);
     }
 
     @NonNull
